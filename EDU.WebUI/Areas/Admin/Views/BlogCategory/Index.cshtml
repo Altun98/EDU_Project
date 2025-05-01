@@ -1,0 +1,34 @@
+﻿@model List<ResultBlogCategoryDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{
+    int count = 0;
+}
+<table class="table table-hover">
+    <tr>
+        <th>S/S</th>
+        <th>Category adi</th>
+        <th>Icon</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Name</td>
+            <td>@item.Icon</td>
+            <td>
+                <a asp-action="DeleteBlogCategory" asp-controller="BlogCategory" asp-area="Admin" asp-route-id="@item.BlogCategoryId" class=" btn btn-outline-danger">Sil</a>
+                <a asp-action="UpdateBlogCategory" asp-controller="BlogCategory" asp-area="Admin" asp-route-id="@item.BlogCategoryId" class=" btn btn-outline-danger">Duzelis ed</a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<a asp-action="CreateBlogCategory" asp-controller="BlogCategory" asp-area="Admin" class="btn btn-outline-primary">Elave ed</a>
+
+

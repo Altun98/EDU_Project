@@ -12,6 +12,6 @@ namespace EDU.Entity.Entities
         public string Name { get; set; }
         public string Icon { get; set; }
         public bool IsShown { get; set; }
-        public ICollection<Course> Courses { get; set; } = new List<Course>();
+        public ICollection<Course> Courses { get; set; }
     }
 }
